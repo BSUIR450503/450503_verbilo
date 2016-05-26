@@ -5,7 +5,6 @@
 #include "addchord.h"
 #include "delchord.h"
 
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow) {
@@ -57,7 +56,7 @@ void MainWindow::on_Camertone_clicked() {
     QMessageBox::information(this, "Tune the guitar", "1 string, 5 fret");
 
     player->setMedia(QUrl::fromLocalFile(QDir::toNativeSeparators(qPrintable(Camertone))));
-    player->setVolume(50);
+    player->setVolume(80);
     player->play();
 }
 
@@ -69,7 +68,7 @@ void MainWindow::on_PlayChord_clicked() {
     }
 
     player->setMedia(QUrl::fromLocalFile(QDir::toNativeSeparators(qPrintable(fileDirectory + currentSoundUrl))));
-    player->setVolume(50);
+    player->setVolume(80);
     player->play();
 }
 

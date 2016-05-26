@@ -1,9 +1,11 @@
 #ifndef METRONOME_H
 #define METRONOME_H
 
+#include <QDir>
+#include <QTimer>
 #include <QDialog>
 #include <QMessageBox>
-#include <ticker.h>
+#include <QMediaPlayer>
 #include <QCloseEvent>
 
 namespace Ui {

@@ -19,7 +19,7 @@ Metronome::Metronome(QWidget *parent) :
 
     player = new QMediaPlayer;
     player->setMedia(QUrl::fromLocalFile(QDir::toNativeSeparators(qPrintable(soundPath))));
-    player->setVolume(50);
+    player->setVolume(80);
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), player, SLOT(play()));

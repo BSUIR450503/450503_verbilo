@@ -5,10 +5,8 @@
 
 #include <QPainter>
 #include <QWidget>
-#include <QLabel>
 #include <QFile>
 #include <QMediaPlayer>
-#include <QPushButton>
 
 #include "filemanage.h"
 #include "tunerwindow.h"

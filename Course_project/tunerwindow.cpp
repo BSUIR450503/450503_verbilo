@@ -80,7 +80,8 @@ void TunerWindow::calculateClosestNote() {
         for (int j = 0; j < notesQuantity; j++) {
 
          if(currentFrequency < (notesList[i][j].pitch + maxRange) &&
-                 currentFrequency > (notesList[i][j].pitch - maxRange)) {
+                 currentFrequency > (notesList[i][j].pitch - maxRange) &&
+                 currentFrequency > lowestNote) {
 
             if(i == 0 && j == 0) {
                 leftBorder = 0;
@@ -94,14 +95,14 @@ void TunerWindow::calculateClosestNote() {
             }
 
             for(int k = 3; k >= 0; k--) {
-                if(currentFrequency < notesList[i][j].pitch &&
-                        currentFrequency > (notesList[i][j].pitch - leftBorder/rangeDevider[k])) {
+              if(currentFrequency < notesList[i][j].pitch &&
+                 currentFrequency > (notesList[i][j].pitch - leftBorder/rangeDivider[k])) {
                     ui->closestNote->setText(notesList[i][j].name);
                     resetColorFlags();
                     colorFlags[k] = true;
                     return;
                 } else if (currentFrequency > notesList[i][j].pitch &&
-                           currentFrequency < (notesList[i][j].pitch + rightBorder/rangeDevider[k])) {
+                           currentFrequency < (notesList[i][j].pitch + rightBorder/rangeDivider[k])) {
                     ui->closestNote->setText(notesList[i][j].name);
                     resetColorFlags();
                     colorFlags[indicationCircles - k - 1] = true;

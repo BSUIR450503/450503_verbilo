@@ -3,11 +3,7 @@
 
 #include <QUrl>
 #include <QDir>
-#include <QDebug>
-
 #include <QFile>
-#include <QString>
-#include <QIODevice>
 #include <QTextStream>
 #include <QMessageBox>
 
@@ -47,17 +43,14 @@ public:
 
 };
 
-
 class AddChordClass : public filemanage {
 public:
    void AddChord(chords AChord, QString ANote);
 };
 
-
 class DelChordClass : public filemanage {
 public:
    void DeleteChord(QString Note, QString deleteChord);
 };
-
 
 #endif // FILEMANAGE_H

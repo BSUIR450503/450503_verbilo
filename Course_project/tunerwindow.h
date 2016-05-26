@@ -4,7 +4,6 @@
 #include <QTimer>
 #include <QDialog>
 #include <QPainter>
-#include <QMessageBox>
 #include <QCloseEvent>
 
 #define notesQuantity 12
@@ -30,7 +29,7 @@ class TunerWindow : public QDialog
     double currentFrequency;
 
     bool colorFlags[indicationCircles];
-    double rangeDevider[4] = {1.5, 4.0, 8.0, 16.0};
+    double rangeDivider[4] = {1.5, 4.0, 8.0, 16.0};
     QString circleColors[indicationCircles] =
     {"red", "orange", "yellow", "blue", "yellow", "orange", "red"};
 
