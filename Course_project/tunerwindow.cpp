@@ -44,7 +44,7 @@ void TunerWindow::initializeNotesStruct() {
             if(i == 0 && j == 0) {
                 currentPitch = previousPitch = lowestNote;
             } else {
-            currentPitch = calculatePitch(previousPitch);
+            currentPitch = previousPitch * 1.0595;
 
             notesList[i][j].pitch = currentPitch;
             notesList[i][j].name = noteNames.at(j);
@@ -64,10 +64,6 @@ void TunerWindow::initializeNotesStruct() {
     }
 }
 
-double TunerWindow::calculatePitch(double previousPitch) {
-    return previousPitch * 1.0595;
-}
-
 void TunerWindow::getCurrentPitch() {
     QString readLine;
     readLine = ui->enteredFrequency->text();
@@ -79,12 +75,12 @@ void TunerWindow::calculateClosestNote() {
 
     double leftBorder, rightBorder;
     double maxRange = 60;
-    bool positionFound = false;
 
     for (int i = 0; i < octavesQuantity; i++) {
         for (int j = 0; j < notesQuantity; j++) {
 
-         if(currentFrequency < (notesList[i][j].pitch + maxRange) && currentFrequency > (notesList[i][j].pitch - maxRange)) {
+         if(currentFrequency < (notesList[i][j].pitch + maxRange) &&
+                 currentFrequency > (notesList[i][j].pitch - maxRange)) {
 
             if(i == 0 && j == 0) {
                 leftBorder = 0;
@@ -97,73 +93,22 @@ void TunerWindow::calculateClosestNote() {
                 rightBorder = notesList[i][j+1].pitch - notesList[i][j].pitch;
             }
 
-            if(currentFrequency < notesList[i][j].pitch && currentFrequency > (notesList[i][j].pitch - leftBorder/16)) {
-                ui->closestNote->setText(notesList[i][j].name);
-                resetColorFlags();
-                centralBlue = true;
-                positionFound = true;
-                break;
-            } else if (currentFrequency > notesList[i][j].pitch && currentFrequency < (notesList[i][j].pitch + rightBorder/16)) {
-                ui->closestNote->setText(notesList[i][j].name);
-                resetColorFlags();
-                centralBlue = true;
-                positionFound = true;
-                break;
+            for(int k = 3; k >= 0; k--) {
+                if(currentFrequency < notesList[i][j].pitch &&
+                        currentFrequency > (notesList[i][j].pitch - leftBorder/rangeDevider[k])) {
+                    ui->closestNote->setText(notesList[i][j].name);
+                    resetColorFlags();
+                    colorFlags[k] = true;
+                    return;
+                } else if (currentFrequency > notesList[i][j].pitch &&
+                           currentFrequency < (notesList[i][j].pitch + rightBorder/rangeDevider[k])) {
+                    ui->closestNote->setText(notesList[i][j].name);
+                    resetColorFlags();
+                    colorFlags[indicationCircles - k - 1] = true;
+                    return;
+                }
             }
-
-            if(currentFrequency < notesList[i][j].pitch && currentFrequency > (notesList[i][j].pitch - leftBorder/8)) {
-                ui->closestNote->setText(notesList[i][j].name);
-                resetColorFlags();
-                leftYellow = true;
-                positionFound = true;
-                break;
-            }
-
-            if(currentFrequency > notesList[i][j].pitch && currentFrequency < (notesList[i][j].pitch + rightBorder/8)) {
-                ui->closestNote->setText(notesList[i][j].name);
-                resetColorFlags();
-                rightYellow = true;
-                positionFound = true;
-                break;
-            }
-
-            if(currentFrequency < notesList[i][j].pitch && currentFrequency > (notesList[i][j].pitch - leftBorder/4)) {
-                ui->closestNote->setText(notesList[i][j].name);
-                resetColorFlags();
-                leftOrange = true;
-                positionFound = true;
-                break;
-            }
-
-            if(currentFrequency > notesList[i][j].pitch && currentFrequency < (notesList[i][j].pitch + rightBorder/4)) {
-                ui->closestNote->setText(notesList[i][j].name);
-                resetColorFlags();
-                rightOrange = true;
-                positionFound = true;
-                break;
-            }
-
-
-            if(currentFrequency < notesList[i][j].pitch && currentFrequency > (notesList[i][j].pitch - leftBorder/1.5)) {
-                ui->closestNote->setText(notesList[i][j].name);
-                resetColorFlags();
-                leftRed = true;
-                positionFound = true;
-                break;
-            }
-
-            if(currentFrequency > notesList[i][j].pitch && currentFrequency < (notesList[i][j].pitch + rightBorder/1.5)) {
-                ui->closestNote->setText(notesList[i][j].name);
-                resetColorFlags();
-                rightRed = true;
-                positionFound = true;
-                break;
-            }
-
           }
-        }
-        if(positionFound) {
-            return;
         }
     }
 }
@@ -177,95 +122,30 @@ void TunerWindow::paintEvent(QPaintEvent *event) {
     QImage tmp(ui->indicationLabel->pixmap()->toImage());
     QPainter painter(&tmp);
     QPen paintpen(Qt::black);
-
     paintpen.setWidth(10);
     painter.setPen(paintpen);
 
-    if(leftRed) {
-        paintpen.setColor("red");
-        painter.setPen(paintpen);
-        colorChanged = true;
+    for(int i = 0; i < indicationCircles; i++) {
+        if(colorFlags[i]) {
+            paintpen.setColor(circleColors[i]);
+            painter.setPen(paintpen);
+            colorChanged = true;
+        }
+        painter.drawEllipse((10 + i*28), 25, 10, 10);
+        if (colorChanged) {
+            paintpen.setColor("black");
+            painter.setPen(paintpen);
+            colorChanged = false;
+        }
     }
-    painter.drawEllipse(15, 25, 10, 10);
-    if (colorChanged) {
-        paintpen.setColor("black");
-        painter.setPen(paintpen);
-        colorChanged = false;
-    }
-
-    if(leftOrange) {
-        paintpen.setColor("orange");
-        painter.setPen(paintpen);
-        colorChanged = true;
-    }
-    painter.drawEllipse(45, 25, 10, 10);
-    if (colorChanged) {
-        paintpen.setColor("black");
-        painter.setPen(paintpen);
-        colorChanged = false;
-    }
-
-    if(leftYellow) {
-        paintpen.setColor("yellow");
-        painter.setPen(paintpen);
-        colorChanged = true;
-    }
-    painter.drawEllipse(70, 25, 10, 10);
-    if (colorChanged) {
-        paintpen.setColor("black");
-        painter.setPen(paintpen);
-        colorChanged = false;
-    }
-
-    if(centralBlue) {
-        paintpen.setColor("blue");
-        painter.setPen(paintpen);
-        colorChanged = true;
-    }
-    painter.drawEllipse(95, 25, 10, 10);
-    if (colorChanged) {
-        paintpen.setColor("black");
-        painter.setPen(paintpen);
-        colorChanged = false;
-    }
-
-    if(rightYellow) {
-        paintpen.setColor("yellow");
-        painter.setPen(paintpen);
-        colorChanged = true;
-    }
-    painter.drawEllipse(120, 25, 10, 10);
-    if (colorChanged) {
-        paintpen.setColor("black");
-        painter.setPen(paintpen);
-        colorChanged = false;
-    }
-
-    if(rightOrange) {
-        paintpen.setColor("orange");
-        painter.setPen(paintpen);
-        colorChanged = true;
-    }
-    painter.drawEllipse(145, 25, 10, 10);
-    if (colorChanged) {
-        paintpen.setColor("black");
-        painter.setPen(paintpen);
-        colorChanged = false;
-    }
-
-    if(rightRed) {
-        paintpen.setColor("red");
-        painter.setPen(paintpen);
-        colorChanged = true;
-    }
-    painter.drawEllipse(175, 25, 10, 10);
 
     ui->indicationLabel->setPixmap(QPixmap::fromImage(tmp));
 }
 
 void TunerWindow::resetColorFlags() {
-    centralBlue = leftRed = leftOrange = leftYellow =
-    rightRed = rightOrange = rightYellow = false;
+    for(int i = 0; i < indicationCircles; i++) {
+        colorFlags[i] = false;
+    }
 }
 
 void TunerWindow::resetIndicationField() {

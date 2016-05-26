@@ -9,6 +9,7 @@
 
 #define notesQuantity 12
 #define octavesQuantity 6
+#define indicationCircles 7
 
 namespace Ui {
 class TunerWindow;
@@ -28,9 +29,10 @@ class TunerWindow : public QDialog
     double lowestNote = 32.7; //C1
     double currentFrequency;
 
-    bool centralBlue;
-    bool leftRed, leftOrange, leftYellow;
-    bool rightRed, rightOrange, rightYellow;
+    bool colorFlags[indicationCircles];
+    double rangeDevider[4] = {1.5, 4.0, 8.0, 16.0};
+    QString circleColors[indicationCircles] =
+    {"red", "orange", "yellow", "blue", "yellow", "orange", "red"};
 
     QString noteNames = "CCDDEFFGGAAB";
     QTimer *timer;
@@ -39,10 +41,8 @@ public:
     ~TunerWindow();
 private:
     void initializeNotesStruct();
-    double calculatePitch(double previousPitch);
-    void resetColorFlags();
-
     void calculateClosestNote();
+    void resetColorFlags();
 
     void resetIndicationField();
     void paintEvent(QPaintEvent *event);
