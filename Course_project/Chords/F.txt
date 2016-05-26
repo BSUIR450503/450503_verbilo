@@ -1,0 +1,16 @@
+F
+MrChord\\ChordSounds\\F\\F.mp3
+MrChord\\Pictures\\F\\f-1.gif
+1n332nn
+F7
+MrChord\\ChordSounds\\F\\F7.mp3
+MrChord\\Pictures\\F\\f7-1.gif
+1n3n24n
+Fm
+MrChord\\ChordSounds\\F\\Fm.mp3
+MrChord\\Pictures\\F\\fm-1.gif
+1n33nnn
+Fm7
+MrChord\\ChordSounds\\F\\Fm7.mp3
+MrChord\\Pictures\\F\\fm7-1.gif
+1n3nn4n

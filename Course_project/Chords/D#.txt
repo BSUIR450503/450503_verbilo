@@ -1,0 +1,16 @@
+D#
+MrChord\\ChordSounds\\Dsh\\Dsh.mp3
+MrChord\\Pictures\\D#\\ddz-6.gif
+6nn888n
+D#m
+MrChord\\ChordSounds\\Dsh\\Dshm.mp3
+MrChord\\Pictures\\D#\\ddzm-6.gif
+6nn887n
+D#7
+MrChord\\ChordSounds\\Dsh\\Dsh7.mp3
+MrChord\\Pictures\\D#\\ddz7-6.gif
+6nn8n8n
+D#m7
+MrChord\\ChordSounds\\Dsh\\Dshm7.mp3
+MrChord\\Pictures\\D#\\ddzm7-6.gif
+6nn8n7n

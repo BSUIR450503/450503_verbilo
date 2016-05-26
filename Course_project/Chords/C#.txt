@@ -1,0 +1,16 @@
+C#
+MrChord\\ChordSounds\\Csh\\Csh.mp3
+MrChord\\Pictures\\C#\\cdz-4.gif
+4nn666n
+C#m
+MrChord\\ChordSounds\\Csh\\Cshm.mp3
+MrChord\\Pictures\\C#\\cdzm-4.gif
+4nn665n
+C#7
+MrChord\\ChordSounds\\Csh\\Csh7.mp3
+MrChord\\Pictures\\C#\\cdz7-4.gif
+4nn6n6n
+C#m7
+MrChord\\ChordSounds\\Csh\\Cshm7.mp3
+MrChord\\Pictures\\C#\\cdzm7-4.gif
+4nn6n5n

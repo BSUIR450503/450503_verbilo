@@ -3,33 +3,43 @@
 
 AddChord::AddChord(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::AddChord)
-{
+    ui(new Ui::AddChord) {
+
     ui->setupUi(this);
-
-    setFixedSize(190,205);
-
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setFixedSize(420,230);
     setWindowTitle("Add");
 }
 
-AddChord::~AddChord()  //тело деструктора
-{
+AddChord::~AddChord() {
     delete ui;
 }
 
-void AddChord::on_buttonBox_accepted()   //слот, вызываемый при нажатии ОК
-{
-    QString ANote;
-    chords AChord;
+void AddChord::on_buttonBox_accepted() {
+    QString enteredNote;
+    chords enteredChord;
 
-    ANote = ui->NoteLine->text();
+    enteredNote = ui->NoteLine->text();
 
-    AChord.ChordName = ui->ChordLine->text();
-    AChord.ChordSound = ui->AudioURL->text();
-    AChord.ChordPicture = ui->PictureURL->text();
+    enteredChord.chordName = ui->ChordLine->text();
+    enteredChord.chordSound = ui->AudioURL->text();
+    enteredChord.chordPicture = ui->PictureURL->text();
+    enteredChord.chordDiagram = ui->bareLine->text() +
+            ui->sixthStringLine->text() +
+            ui->fifthStringLine->text() +
+            ui->fourthStringLine->text() +
+            ui->thirdStringLine->text() +
+            ui->secondStringLine->text() +
+            ui->firstStringLine->text();
 
-    if(ANote == NULL || AChord.ChordName == NULL || AChord.ChordPicture == NULL || AChord.ChordSound == NULL)
-    {
+    if (enteredChord.chordDiagram.length() > 7 || enteredChord.chordDiagram.length() < 7) {
+        QMessageBox::information(0,"Chord Structure","Input error");
+        return;
+    }
+
+    if(enteredNote == NULL || enteredChord.chordName == NULL ||
+            enteredChord.chordPicture == NULL || enteredChord.chordSound == NULL ||
+            enteredChord.chordDiagram == NULL) {
         QMessageBox::information(0,"INPUT","Error");
         return;
     }
@@ -39,5 +49,5 @@ void AddChord::on_buttonBox_accepted()   //слот, вызываемый при
     Add.GetFileDirectory();
     Add.ScanNotes();
 
-    Add.AddChord(AChord, ANote);
+    Add.AddChord(enteredChord, enteredNote);
 }

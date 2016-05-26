@@ -1,0 +1,32 @@
+A
+MrChord\\ChordSounds\\A\\A.mp3
+MrChord\\Pictures\\A\\a.gif
+nn02220
+A - 5
+MrChord\\ChordSounds\\A\\A-5.mp3
+MrChord\\Pictures\\A\\a-5.gif
+5n776nn
+A7
+MrChord\\ChordSounds\\A\\A7.mp3
+MrChord\\Pictures\\A\\a7.gif
+nn02020
+A7 - 5
+MrChord\\ChordSounds\\A\\A7-5.mp3
+MrChord\\Pictures\\A\\a7-5.gif
+5n7n68n
+Am
+MrChord\\ChordSounds\\A\\Am.mp3
+MrChord\\Pictures\\A\\am.gif
+nn02210
+Am - 5
+MrChord\\ChordSounds\\A\\Am-5.mp3
+MrChord\\Pictures\\A\\am-5.gif
+5n77nnn
+Am7
+MrChord\\ChordSounds\\A\\Am7.mp3
+MrChord\\Pictures\\A\\am7.gif
+nn02010
+Am7 - 5
+MrChord\\ChordSounds\\A\\Am7-5.mp3
+MrChord\\Pictures\\A\\am7-5.gif
+5n7nn8n

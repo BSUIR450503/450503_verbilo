@@ -16,32 +16,28 @@
 #define N 80
 #define C 12
 
-extern QString FileDirectory;
+extern QString fileDirectory;
 
-struct chords  // структура содержащая название аккорда и пути к файлу со схемой и аудиофайлу
-{
-    QString ChordName;
-    QString ChordPicture;
-    QString ChordSound;
+struct notes {
+    QString note;
+    QString chordFile;
 };
 
-struct notes   // структура содержащая название ноты и путь к файлу с аккордами
-{
-    QString Note;
-    QString ChordFile;
+struct chords {
+    QString chordName;
+    QString chordPicture;
+    QString chordSound;
+    QString chordDiagram;
 };
 
-class filemanage   //класс предназначен для работы с файлами
-{
+class filemanage {
 protected:
     notes *Notes;
-    chords Temp;
+    QString fileDirectory;
 
-    QString FileDirectory;
-
-    std::deque<chords> DelList;  //инициализация STL контейнера-итератора deque
+    std::deque<chords> DelList;
 public:
-    explicit filemanage();  //конструктор
+    explicit filemanage();
 
     notes* ScanNotes();
     void ScanChords(QString FileName, chords* CurrCords);
@@ -52,19 +48,15 @@ public:
 };
 
 
-class AddChordClass : public filemanage  //производный класс
-{
-
+class AddChordClass : public filemanage {
 public:
    void AddChord(chords AChord, QString ANote);
 };
 
 
-class DelChordClass : public filemanage //производный класс
-{
-
+class DelChordClass : public filemanage {
 public:
-   void DeleteChord(QString DNote, QString DChord);
+   void DeleteChord(QString Note, QString deleteChord);
 };
 
 

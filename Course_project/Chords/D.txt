@@ -1,0 +1,34 @@
+D
+MrChord\\ChordSounds\\D\\D.mp3
+MrChord\\Pictures\\D\\d.gif
+nnn0232
+D - 5
+MrChord\\ChordSounds\\D\\D-5.mp3
+MrChord\\Pictures\\D\\d-5.gif
+5nn777n
+Dm
+MrChord\\ChordSounds\\D\\Dm.mp3
+MrChord\\Pictures\\D\\dm.gif
+nnn0231
+Dm - 5
+MrChord\\ChordSounds\\D\\Dm-5.mp3
+MrChord\\Pictures\\D\\dm-5.gif
+5nn776n
+D7
+MrChord\\ChordSounds\\D\\D7.mp3
+MrChord\\Pictures\\D\\d7.gif
+nnn0212
+D7 - 5
+MrChord\\ChordSounds\\D\\D7-5.mp3
+MrChord\\Pictures\\D\\d7-5.gif
+5nn7n7n
+Dm7
+MrChord\\ChordSounds\\D\\Dm7.mp3
+MrChord\\Pictures\\D\\dm7.gif
+nnn0211
+Dm7 - 5
+MrChord\\ChordSounds\\D\\Dm7-5.mp3
+MrChord\\Pictures\\D\\dm7-5.gif
+5nn7n6n
+
+

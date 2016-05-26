@@ -1,0 +1,16 @@
+G#
+MrChord\\ChordSounds\\Gsh\\Gsh.mp3
+MrChord\\Pictures\\G#\\gdz-4.gif
+4n665nn
+G#7
+MrChord\\ChordSounds\\Gsh\\Gsh7.mp3
+MrChord\\Pictures\\G#\\gdz7-4.gif
+4n6n57n
+G#m
+MrChord\\ChordSounds\\Gsh\\Gshm.mp3
+MrChord\\Pictures\\G#\\gdzm-4.gif
+4n66nnn
+G#m7
+MrChord\\ChordSounds\\Gsh\\Gshm7.mp3
+MrChord\\Pictures\\G#\\gdzm7-4.gif
+4n6nn7n

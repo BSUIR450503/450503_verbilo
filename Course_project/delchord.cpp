@@ -3,39 +3,32 @@
 
 DelChord::DelChord(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DelChord)
-{
+    ui(new Ui::DelChord) {
+
     ui->setupUi(this);
-
+    this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setFixedSize(190,150);
-
     setWindowTitle("Delete");
 }
 
-DelChord::~DelChord()    //тело деструктора
-{
+DelChord::~DelChord() {
     delete ui;
 }
 
-void DelChord::on_buttonBox_accepted()  //слот, вызываемый при нажатии ОК
-{
-    QString DNote;
-    QString DChord;
+void DelChord::on_buttonBox_accepted() {
+    QString enteredNote;
+    QString enteredChord;
 
-    DNote = ui->NoteLine->text();
+    enteredNote = ui->NoteLine->text();
+    enteredChord = ui->ChordLine->text();
 
-    DChord = ui->ChordLine->text();
-
-    if(DNote == NULL || DChord == NULL)
-    {
+    if(enteredNote == NULL || enteredChord == NULL) {
         QMessageBox::information(0,"INPUT","Error");
         return;
     }
 
     DelChordClass Del;
-
     Del.GetFileDirectory();
     Del.ScanNotes();
-
-    Del.DeleteChord(DNote, DChord);
+    Del.DeleteChord(enteredNote, enteredChord);
 }

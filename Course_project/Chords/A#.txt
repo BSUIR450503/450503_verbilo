@@ -1,0 +1,16 @@
+A#
+MrChord\\ChordSounds\\Ash\\Ash.mp3
+MrChord\\Pictures\\A#\\adz-6.gif
+6n887nn
+A#7
+MrChord\\ChordSounds\\Ash\\Ash7.mp3
+MrChord\\Pictures\\A#\\adz7-6.gif
+6n8n79n
+A#m
+MrChord\\ChordSounds\\Ash\\Ashm.mp3
+MrChord\\Pictures\\A#\\adzm-6.gif
+6n88nnn
+A#m7
+MrChord\\ChordSounds\\Ash\\Ashm7.mp3
+MrChord\\Pictures\\A#\\adzm7-6.gif
+6n8nn9n

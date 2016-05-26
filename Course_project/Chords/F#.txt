@@ -1,0 +1,16 @@
+F#
+MrChord\\ChordSounds\\Fsh\\Fsh.mp3
+MrChord\\Pictures\\F#\\fdz-2.gif
+2n443nn
+F#7
+MrChord\\ChordSounds\\Fsh\\Fsh7.mp3
+MrChord\\Pictures\\F#\\fdz7-2.gif
+2n4n35n
+F#m
+MrChord\\ChordSounds\\Fsh\\Fshm.mp3
+MrChord\\Pictures\\F#\\fdzm-2.gif
+2n44nnn
+F#m7
+MrChord\\ChordSounds\\Fsh\\Fshm7.mp3
+MrChord\\Pictures\\F#\\fdzm7-2.gif
+2n4nn5n

@@ -1,0 +1,24 @@
+G
+MrChord\\ChordSounds\\G\\G.mp3
+MrChord\\Pictures\\G\\g.gif
+n320003
+G - 3
+MrChord\\ChordSounds\\G\\G-3.mp3
+MrChord\\Pictures\\G\\g-3.gif
+3n554nn
+G7
+MrChord\\ChordSounds\\G\\G7.mp3
+MrChord\\Pictures\\G\\g7.gif
+n320001
+G7 - 3
+MrChord\\ChordSounds\\G\\G7-3.mp3
+MrChord\\Pictures\\G\\g7-3.gif
+3n5n46n
+Gm
+MrChord\\ChordSounds\\G\\Gm.mp3
+MrChord\\Pictures\\G\\gm-3.gif
+3n55nnn
+Gm7
+MrChord\\ChordSounds\\G\\Gm7.mp3
+MrChord\\Pictures\\G\\gm7-3.gif
+3n5nn6n

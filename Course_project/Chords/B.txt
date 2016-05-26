@@ -1,0 +1,20 @@
+B
+MrChord\\ChordSounds\\B\\B.mp3
+MrChord\\Pictures\\B\\b-2.gif
+2nn444n
+B7
+MrChord\\ChordSounds\\B\\B7.mp3
+MrChord\\Pictures\\B\\b7.gif
+nn21202
+B7 - 2
+MrChord\\ChordSounds\\B\\B7-2.mp3
+MrChord\\Pictures\\B\\b7-2.gif
+2nn4n4n
+Bm
+MrChord\\ChordSounds\\B\\Bm.mp3
+MrChord\\Pictures\\B\\bm-2.gif
+2nn443n
+Bm7
+MrChord\\ChordSounds\\B\\Bm7.mp3
+MrChord\\Pictures\\B\\bm7-2.gif
+2nn4n3n

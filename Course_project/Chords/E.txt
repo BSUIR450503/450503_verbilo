@@ -1,0 +1,32 @@
+E
+MrChord\\ChordSounds\\E\\E.mp3
+MrChord\\Pictures\\E\\e.gif
+n022100
+E - 7
+MrChord\\ChordSounds\\E\\E-7.mp3
+MrChord\\Pictures\\E\\e-7.gif
+7nn999n
+Em
+MrChord\\ChordSounds\\E\\Em.mp3
+MrChord\\Pictures\\E\\em.gif
+n022000
+Em - 7
+MrChord\\ChordSounds\\E\\Em-7.mp3
+MrChord\\Pictures\\E\\em-7.gif
+7nn998n
+E7
+MrChord\\ChordSounds\\E\\E7.mp3
+MrChord\\Pictures\\E\\e7.gif
+n022130
+E7 - 7
+MrChord\\ChordSounds\\E\\E7-7.mp3
+MrChord\\Pictures\\E\\e7-7.gif
+7nn9n9n
+Em7
+MrChord\\ChordSounds\\E\\Em7.mp3
+MrChord\\Pictures\\E\\em7.gif
+n022030
+Em7 - 7
+MrChord\\ChordSounds\\E\\Em7-7.mp3
+MrChord\\Pictures\\E\\em7-7.gif
+7nn9n8n

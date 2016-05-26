@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+#include <QPainter>
 #include <QWidget>
 #include <QLabel>
 #include <QFile>
@@ -10,42 +11,49 @@
 #include <QPushButton>
 
 #include "filemanage.h"
+#include "tunerwindow.h"
+#include "metronome.h"
 
 
 namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow  //класс главного окна
-{
+class MainWindow : public QMainWindow {
 public:
-    explicit MainWindow(QWidget *parent = 0);//конструктор
-    ~MainWindow(); //деструктор
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
 private:
-
     Q_OBJECT
 
-    int ChordsN;
+    int chordCounter;
 
-    filemanage Start; //создания объекта класса filemanage
+    filemanage Start;
 
     notes* Notes;
-    chords* CurrChords;
+    chords* currentChords;
 
-    QString FileDirectory;
-    QString SearchC;
-    QString CurrentNote;
-    QString CurrentChord;
-    QString CurrentPicUrl;
-    QString CurrentSoundUrl;
+    QString fileDirectory;
+    QString searchChord;
 
-    QMediaPlayer *Player; //создания объекта класса QMediaPlayer для работы с аудио
+    QString currentNote;
+    QString currentChord;
+    QString currentPicUrl;
+    QString currentSoundUrl;
+    QString currentChordDiagram;
+
+    QMediaPlayer *player;
+
+    void paintEvent(QPaintEvent *event);
+    void resetNeckPicture();
 
     Ui::MainWindow *ui;
-private slots:                 //слоты кнопок и выдвижных списков
+private slots:
     void on_PlayChord_clicked();
     void on_Camertone_clicked();
+    void on_tunerButton_clicked();
+    void on_metronomeButton_clicked();
 
     void on_ChordNote_activated();
     void on_ChordType_activated();
